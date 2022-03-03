@@ -7,13 +7,14 @@ def factors():
     with open(argv[1]) as f:
         for line in f:
             div = 2
-            num = int(line)
+            if line.isdigit():
+                num = int(line)
+            else:
+                continue
             while True:
                 end = time.time()
                 if ((end - start) > 5):
                     os.system('pkill -f factors')
-                #print("div = {}".format(div))
-                #print("num = {}".format(num))
                 if (num == 0 or num == 1):
                     print("{}={}*{}".format(num, num, num))
                     break
