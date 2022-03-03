@@ -14,6 +14,9 @@ def factors():
                     os.system('pkill -f factors')
                 #print("div = {}".format(div))
                 #print("num = {}".format(num))
+                if (num == 0 or num == 1):
+                    print("{}={}*{}".format(num, num, num))
+                    break
                 if num % div == 0:
                     result = int(num / div)
                     print("{}={}*{}".format(num, result, div))
